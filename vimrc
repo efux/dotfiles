@@ -47,6 +47,7 @@ noremap <Left> <Nop>
 noremap <Right> <Nop>
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>a
+imap § <esc>
 
 " Some code completions for faster random content
 iab lorem Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.

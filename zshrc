@@ -7,11 +7,33 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-dev() { cd ~/Documents/dev/$1; }
-# compctl -W /home/etienne/Documents/dev -/ dev
+# Aliases
+alias gc="git commit -a"
+
+# Functions
+dev() { 
+	if [[ -d ~/Documents/dev/$1 ]] then
+		cd ~/Documents/dev/$1; 
+	else
+		mkdir -p ~/Documents/dev/$1;
+		cd ~/Documents/dev/$1; 
+		git init
+		git remote add origin git@github.com:efux/$1.git
+		touch README.md
+
+		# Create content of the README.md file
+		echo $1 >> README.md
+		echo "===============" >> README.md
+		echo >> README.md
+		echo Goals of this project >> README.md
+		echo "---------------" >> README.md
+		echo >> README.md
+
+		vim + README.md
+	fi
+}
+# autocomplete projectname for the dev directory
+compctl -W /home/etienne/Documents/dev -/ dev
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -77,7 +99,6 @@ export EDITOR='vim'
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-
 
 [[ -n "${key[Home]}"     ]]  && bindkey  "${key[Home]}"     beginning-of-line
 [[ -n "${key[End]}"      ]]  && bindkey  "${key[End]}"      end-of-line
