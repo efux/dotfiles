@@ -102,3 +102,6 @@ export EDITOR='vim'
 
 [[ -n "${key[Home]}"     ]]  && bindkey  "${key[Home]}"     beginning-of-line
 [[ -n "${key[End]}"      ]]  && bindkey  "${key[End]}"      end-of-line
+
+# correction of the backspace problem in vim
+stty erase '^?'

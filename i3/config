@@ -29,13 +29,10 @@ bindsym $mod+p exec pavucontrol
 bindsym $mod+i exec incognito
 bindsym $mod+t exec thunar
 
-# bindsym XF86AudioPlay exec wget http://127.0.0.1:8080/old/?control=pause -o /dev/null
+# The F7 - F12 key are remapped to suit the media keys
 bindsym XF86AudioLowerVolume exec amixer -q sset Master 5%-
-bindsym F10 exec amixer -q sset Master 5%-
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+
-bindsym F11 exec amixer -q sset Master 5%+
 bindsym XF86AudioMute exec amixer -q sset Master toggle
-bindsym F12 exec amixer -q sset Master toggle
 
 # lock screen
 bindsym $mod+Shift+L exec i3lock -c 000000
