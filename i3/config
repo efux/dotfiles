@@ -27,6 +27,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 # other useful shortcuts
 bindsym $mod+p exec pavucontrol
 bindsym $mod+i exec incognito
+bindsym $mod+Shift+i exec chromium
 bindsym $mod+t exec thunar
 
 # The F7 - F12 key are remapped to suit the media keys
