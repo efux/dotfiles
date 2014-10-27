@@ -2,6 +2,21 @@
 " ==========================================
 
 set nocompatible
+filetype off
+
+let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" load plugins
+Plugin 'gmarik/Vundle.vim'
+"Plugin 'Valloric/YouCompleteMe.git'
+
+call vundle#end()
+filetype plugin indent on
+
 set history=5000
 set showcmd
 set noswapfile
@@ -13,10 +28,7 @@ set relativenumber
 set hlsearch
 set nowrap
 
-execute pathogen#infect()
-filetype plugin on
-filetype plugin indent on
-set laststatus=2
+set backspace=indent,eol,start
 
 " SnipMate
 let g:snips_author = 'Etienne Fux'
@@ -48,6 +60,9 @@ noremap <Right> <Nop>
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>a
 imap § <esc>
+
+" Remap enter to insert a new line below/above and return to normal mode
+nmap <CR> o<Esc>k$
 
 " Some code completions for faster random content
 iab lorem Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.

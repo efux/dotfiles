@@ -1,8 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/etienne/Documents/dev/simple-spy/world'
-let g:netrw_dirhist_2='/home/etienne/Downloads/tmxreader/tmx-parser-read-only/TmxParser_Test'
-let g:netrw_dirhist_3='/home/etienne/Documents/dev/simple-spy/maps'
-let g:netrw_dirhist_4='/media/win/Users/efux/Documents/dev/lovetest'
-let g:netrw_dirhist_5='/home/etienne/scripts'
-let g:netrw_dirhist_6='/home/etienne/.i3'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/etienne/Documents/dev/raspTV/img'
