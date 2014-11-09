@@ -12,7 +12,6 @@
 set $mod Mod1
 
 # autostart
-#exec feh --bg-scale ~/Pictures/blonde.png
 exec feh --no-xinerama --bg-scale ~/Pictures/grassgradient.png
 
 # font for window titles. ISO 10646 = Unicode
