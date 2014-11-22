@@ -33,7 +33,7 @@ dev() {
 	fi
 }
 # autocomplete projectname for the dev directory
-compctl -W /home/etienne/Documents/dev -/ dev
+compctl -W ~/Documents/dev -/ dev
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"

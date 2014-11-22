@@ -51,6 +51,10 @@ set smartcase
 set wildmenu
 set wildignore=*.o,*.class
 
+" Move visual block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
 " Key mappings
 nnoremap <silent> <F6> :noh<CR><Esc>
 noremap <Up> <Nop>
