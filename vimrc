@@ -12,7 +12,12 @@ call vundle#begin()
 
 " load plugins
 Plugin 'gmarik/Vundle.vim'
-"Plugin 'Valloric/YouCompleteMe.git'
+Plugin 'mtth/scratch.vim'
+Plugin 'dart-lang/dart-vim-plugin'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/syntastic'
+Plugin 'vim-scripts/snipMate'
+Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()
 filetype plugin indent on
@@ -23,10 +28,11 @@ set noswapfile
 
 " Visual appearance
 syntax on
+set background=dark
 let g:Powerline_colorscheme = 'solarized256'
 set relativenumber
 set hlsearch
-set nowrap
+set wrap
 
 set backspace=indent,eol,start
 
@@ -44,7 +50,6 @@ autocmd! bufwritepost .vimrc source ~/.vimrc
 " Buffers can be moved to the background without saving
 set hidden
 set autoindent
-set ignorecase
 set smartcase
 
 

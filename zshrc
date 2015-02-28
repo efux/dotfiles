@@ -32,8 +32,29 @@ dev() {
 		vim + README.md
 	fi
 }
-# autocomplete projectname for the dev directory
+
+mod() { 
+	if [[ -d ~/Documents/hslu/$1 ]] then
+		cd ~/Documents/hslu/$1; 
+	else
+		filename="summary.md"
+		mkdir -p ~/Documents/hslu/$1/summary;
+		cd ~/Documents/hslu/$1; 
+		git init
+		touch $filename
+
+		# Create content of the README.md file
+		echo "#" $1 >> $filename
+		echo >> $filename
+		echo "Der Inhalt der Zusammenfassung des Moduls $1 ist wie folgt aufgebaut:" >> $filename
+
+		vim + $filename
+	fi
+}
+
+# autocomplete projectname for my own functions
 compctl -W ~/Documents/dev -/ dev
+compctl -W ~/Documents/hslu -/ mod
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -65,9 +86,9 @@ compctl -W ~/Documents/dev -/ dev
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
-HISTSIZE=20000
+HISTSIZE=50000
 HISTFILE=~/.zsh_history
-SAVEHIST=20000
+SAVEHIST=50000
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
