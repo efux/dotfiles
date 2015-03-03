@@ -35,7 +35,7 @@ bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+
 bindsym XF86AudioMute exec amixer -q sset Master toggle
 
 # Screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dev 5%
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5%
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5%
 
 # lock screen
