@@ -18,6 +18,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/snipMate'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'nvie/vim-pyunit'
 
 call vundle#end()
 filetype plugin indent on
@@ -69,6 +70,8 @@ noremap <Right> <Nop>
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>a
 imap § <esc>
+" pytest
+noremap <F2> :call PyUnitRunAllTests()<CR>
 
 " Remap enter to insert a new line below/above and return to normal mode
 nmap <CR> o<Esc>k$
