@@ -32,8 +32,7 @@ bindsym $mod+t exec thunar
 # The F7 - F12 key are remapped to suit the media keys
 bindsym XF86AudioLowerVolume exec amixer -q sset Master 5%-
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+
-bindsym XF86AudioMute exec amixer -q sset Master toggle
-
+bindsym XF86AudioMute exec amixer -q sset Master toggle 
 # Screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5%
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5%
@@ -163,7 +162,7 @@ bindsym $mod+r exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	status_command /home/efux/scripts/i3start.sh
+	status_command /home/efux/scripts/i3ex.sh
 		workspace_buttons yes
 }
 
@@ -171,5 +170,6 @@ bar {
 for_window [class = "love"] floating enable
 for_window [instance = "xcalc"] floating enable
 for_window [title = "win0"] move container to workspace 10
+for_window [title = "profanity"] move container to workspace 9
 for_window [title = "JDownloader"] move container to workspace 10
 
