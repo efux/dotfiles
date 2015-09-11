@@ -30,8 +30,8 @@ bindsym $mod+Shift+i exec chromium
 bindsym $mod+t exec thunar
 
 # The F7 - F12 key are remapped to suit the media keys
-bindsym XF86AudioLowerVolume exec amixer -q sset Master 5%-
-bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
 bindsym XF86AudioMute exec amixer -q sset Master toggle 
 # Screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5%
