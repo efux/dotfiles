@@ -9,13 +9,14 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # autostart
-exec feh --no-xinerama --bg-scale ~/Pictures/grassgradient.png
+# exec xmodmap ~/.Xmodmap
+# exec feh --no-xinerama --bg-fill ~/Pictures/back.jpg
 
 # font for window titles. ISO 10646 = Unicode
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# font pango:monospace 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -29,9 +30,9 @@ bindsym $mod+i exec incognito
 bindsym $mod+Shift+i exec chromium
 bindsym $mod+t exec thunar
 
-# The F7 - F12 key are remapped to suit the media keys
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
+# The F7 - F12 key are remapped to suit the media keys (amixer needs alsa-mixer installed)
+bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
+bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
 bindsym XF86AudioMute exec amixer -q sset Master toggle 
 # Screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5%
@@ -162,7 +163,7 @@ bindsym $mod+r exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	status_command /home/efux/scripts/i3ex.sh
+	status_command i3status
 		workspace_buttons yes
 }
 
