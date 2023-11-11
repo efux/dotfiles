@@ -10,10 +10,17 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $menu dmenu_path | dmenu | xargs swaymsg exec --
+
+include /etc/sway/config-vars.d/*
 
 # autostart
-# exec xmodmap ~/.Xmodmap
-# exec feh --no-xinerama --bg-fill ~/Pictures/back.jpg
+output * bg /home/efux/Pictures/bg.jpg fill
+
+# monitor alignment (use swaymsg -t get_outputs to figure out the names)
+output eDP-1 pos 3840 0
+output DP-7 pos 1920 0
+output DP-8 pos 0 0
 
 # font for window titles. ISO 10646 = Unicode
 # font pango:monospace 10
@@ -22,24 +29,28 @@ set $mod Mod4
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec konsole
 
 # other useful shortcuts
 bindsym $mod+p exec pavucontrol
-bindsym $mod+i exec incognito
+bindsym $mod+i exec "chromium --incognito"
 bindsym $mod+Shift+i exec chromium
 bindsym $mod+t exec thunar
 
 # The F7 - F12 key are remapped to suit the media keys (amixer needs alsa-mixer installed)
-bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
-bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
-bindsym XF86AudioMute exec amixer -q sset Master toggle 
+bindsym F7 exec wtype -k XF86AudioPrev
+bindsym F8 exec wtype -k XF86AudioNext
+bindsym F9 exec wtype -k XF86AudioPlay
+bindsym F10 exec amixer sset Master 3%-
+bindsym F11 exec amixer sset Master 3%+
+bindsym F12 exec amixer -q sset Master toggle 
+
 # Screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5%
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5%
 
 # lock screen
-bindsym $mod+Shift+L exec i3lock -c 000000
+bindsym $mod+Shift+L exec swaylock -c 000000ff
 
 # take a screenshot
 bindsym $mod+u exec shutter -s
@@ -50,7 +61,7 @@ bindsym $mod+q kill
 bindsym $mod+Shift+Q killall
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec $menu
 
 bindsym $mod+minus scratchpad show
 bindsym $mod+shift+minus move scratchpad
@@ -115,16 +126,16 @@ bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
 
 # move focused container to workspace
-bindsym $mod+Shift+plus move container to workspace 1
-bindsym $mod+Shift+quotedbl move container to workspace 2
-bindsym $mod+Shift+asterisk move container to workspace 3
-bindsym $mod+Shift+ccedilla move container to workspace 4
-bindsym $mod+Shift+percent move container to workspace 5
-bindsym $mod+Shift+ampersand move container to workspace 6
-bindsym $mod+Shift+slash move container to workspace 7
-bindsym $mod+Shift+parenleft move container to workspace 8
-bindsym $mod+Shift+parenright move container to workspace 9
-bindsym $mod+Shift+equal move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
 bindsym $mod+Shift+C reload
@@ -146,12 +157,6 @@ mode "resize" {
 		bindsym l resize shrink height 10 px or 10 ppt
 		bindsym odiaeresis resize grow width 10 px or 10 ppt
 
-# same bindings, but for the arrow keys
-		bindsym 113 resize shrink width 10 px or 10 ppt
-		bindsym 116 resize grow height 10 px or 10 ppt
-		bindsym 111 resize shrink height 10 px or 10 ppt
-		bindsym 114 resize grow width 10 px or 10 ppt
-
 # back to normal: Enter or Escape
 		bindsym Return mode "default"
 		bindsym Escape mode "default"
@@ -163,8 +168,14 @@ bindsym $mod+r exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	status_command i3status
-		workspace_buttons yes
+	swaybar_command waybar
+	# status_command while date +'%d.%m.%Y %I:%M:%S %p'; do sleep 1; done;
+	workspace_buttons yes
+}
+
+input * {
+	xkb_layout "ch"
+	xkb_variant "de"
 }
 
 # make Löve2D windows always floating
