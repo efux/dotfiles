@@ -6,21 +6,23 @@ filetype off
 
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" auto-install vim-plug, if it is not installed
+let data_dir = '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+      silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+        autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
 
 " load plugins
-Plugin 'gmarik/Vundle.vim'
-Plugin 'mtth/scratch.vim'
-Plugin 'dart-lang/dart-vim-plugin'
-Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/syntastic'
-Plugin 'vim-scripts/snipMate'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'nvie/vim-pyunit'
+Plug 'mtth/scratch.vim'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/syntastic'
+Plug 'vim-scripts/snipMate'
+Plug 'jiangmiao/auto-pairs'
 
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 
 set history=5000
@@ -70,11 +72,9 @@ noremap <Right> <Nop>
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>a
 imap § <esc>
-" pytest
-noremap <F2> :call PyUnitRunAllTests()<CR>
 
 " Remap enter to insert a new line below/above and return to normal mode
-nmap <CR> o<Esc>k$
+nmap <CR> o<Esc>k
 
 " Some code completions for faster random content
 iab lorem Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.
@@ -109,9 +109,3 @@ function! RegenerateTags()
 	exec ':silent !ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q .'
 	redraw!
 endfunction
-
-" NetBeans
-set expandtab
-set smarttab
-set tabstop=4
-set shiftwidth=4
