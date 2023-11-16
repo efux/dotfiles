@@ -21,6 +21,8 @@ Plug 'tpope/vim-surround'
 Plug 'scrooloose/syntastic'
 Plug 'vim-scripts/snipMate'
 Plug 'jiangmiao/auto-pairs'
+Plug 'godlygeek/tabular'
+Plug 'preservim/vim-markdown'
 
 call plug#end()
 filetype plugin indent on
@@ -109,3 +111,10 @@ function! RegenerateTags()
 	exec ':silent !ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q .'
 	redraw!
 endfunction
+
+
+" On entering a file vim makes a view and restores it on reopening.
+" Through this the cursors is always at the same position and folds are
+" restored.
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview

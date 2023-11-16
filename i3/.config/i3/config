@@ -10,7 +10,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu dmenu_path | rofi -show run | xargs swaymsg exec --
 
 include /etc/sway/config-vars.d/*
 
@@ -36,6 +36,7 @@ bindsym $mod+p exec pavucontrol
 bindsym $mod+i exec "chromium --incognito"
 bindsym $mod+Shift+i exec chromium
 bindsym $mod+t exec thunar
+bindsym $mod+x exec fuxconf
 
 # The F7 - F12 key are remapped to suit the media keys (amixer needs alsa-mixer installed)
 bindsym F7 exec wtype -k XF86AudioPrev
@@ -137,8 +138,7 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# reload the configuration file
-bindsym $mod+Shift+C reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+R restart
 # exit i3 (logs you out of your X session)
