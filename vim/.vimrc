@@ -22,7 +22,6 @@ Plug 'scrooloose/syntastic'
 Plug 'vim-scripts/snipMate'
 Plug 'jiangmiao/auto-pairs'
 Plug 'godlygeek/tabular'
-Plug 'preservim/vim-markdown'
 
 call plug#end()
 filetype plugin indent on

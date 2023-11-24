@@ -11,6 +11,7 @@
 
 set $mod Mod4
 set $menu dmenu_path | rofi -show run | xargs swaymsg exec --
+set $desktopmenu rofi -show drun
 
 include /etc/sway/config-vars.d/*
 
@@ -33,8 +34,8 @@ bindsym $mod+Return exec konsole
 
 # other useful shortcuts
 bindsym $mod+p exec pavucontrol
-bindsym $mod+i exec "chromium --incognito"
-bindsym $mod+Shift+i exec chromium
+bindsym $mod+i exec "brave-browser --incognito"
+bindsym $mod+Shift+i exec brave-browser
 bindsym $mod+t exec thunar
 bindsym $mod+x exec fuxconf
 
@@ -63,6 +64,7 @@ bindsym $mod+Shift+Q killall
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec $menu
+bindsym $mod+Shift+D exec $desktopmenu
 
 bindsym $mod+minus scratchpad show
 bindsym $mod+shift+minus move scratchpad
