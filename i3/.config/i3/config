@@ -34,8 +34,8 @@ bindsym $mod+Return exec konsole
 
 # other useful shortcuts
 bindsym $mod+p exec pavucontrol
-bindsym $mod+i exec "brave-browser --incognito"
-bindsym $mod+Shift+i exec brave-browser
+bindsym $mod+i exec "firefox --private-window"
+bindsym $mod+Shift+i exec firefox
 bindsym $mod+t exec thunar
 bindsym $mod+x exec fuxconf
 
