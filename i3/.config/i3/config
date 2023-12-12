@@ -40,9 +40,9 @@ bindsym $mod+t exec thunar
 bindsym $mod+x exec fuxconf
 
 # The F7 - F12 key are remapped to suit the media keys (amixer needs alsa-mixer installed)
-bindsym F7 exec wtype -k XF86AudioPrev
-bindsym F8 exec wtype -k XF86AudioNext
-bindsym F9 exec wtype -k XF86AudioPlay
+bindsym F7 exec playerctl previous
+bindsym F8 exec playerctl next
+bindsym F9 exec playerctl play-pause
 bindsym F10 exec amixer sset Master 3%-
 bindsym F11 exec amixer sset Master 3%+
 bindsym F12 exec amixer -q sset Master toggle 
