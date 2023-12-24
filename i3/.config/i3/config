@@ -55,7 +55,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5%
 bindsym $mod+Shift+L exec swaylock -c 000000ff
 
 # take a screenshot
-bindsym $mod+u exec shutter -s
+bindsym $mod+u exec XDG_SCREENSHOTS_DIR=/tmp grimshot save area
 
 # kill focused window
 # bindsym $mod+F4 kill
