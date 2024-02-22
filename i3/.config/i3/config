@@ -20,8 +20,8 @@ output * bg /home/efux/Pictures/bg.jpg fill
 
 # monitor alignment (use swaymsg -t get_outputs to figure out the names)
 output eDP-1 pos 3840 0
-output DP-8 pos 1920 0
-output DP-7 pos 0 0
+output DP-7 pos 1920 0
+output DP-8 pos 0 0
 
 # font for window titles. ISO 10646 = Unicode
 # font pango:monospace 10
