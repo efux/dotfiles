@@ -41,6 +41,10 @@ button:hover {
     color: #ffffff;
 }
 
+#workspaces button#sway-workspace-KeePassXC:not(.focused) {
+    color: transparent;
+}
+
 #workspaces button:hover {
     background: rgba(0, 0, 0, 0.2);
 }
