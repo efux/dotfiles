@@ -183,5 +183,5 @@ input * {
 exec keepassxc
 for_window [title = "MyDatabase.*"] move container to workspace KeePassXC
 bindsym $mod+Shift+y exec keepassxc
-bindsym $mod+y workspace KeepassXC
+bindsym $mod+y workspace KeePassXC
 
