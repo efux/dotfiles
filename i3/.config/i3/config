@@ -55,7 +55,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5%
 bindsym $mod+Shift+L exec swaylock -c 000000ff
 
 # take a screenshot
-bindsym $mod+u exec XDG_SCREENSHOTS_DIR=/tmp grimshot save area
+bindsym $mod+u exec XDG_SCREENSHOTS_DIR=/tmp grimshot copy area
 
 # kill focused window
 # bindsym $mod+F4 kill
@@ -180,10 +180,8 @@ input * {
 	xkb_variant "de"
 }
 
-# make Löve2D windows always floating
-for_window [class = "love"] floating enable
-for_window [instance = "xcalc"] floating enable
-for_window [title = "win0"] move container to workspace 10
-for_window [title = "profanity"] move container to workspace 9
-for_window [title = "JDownloader"] move container to workspace 10
+exec keepassxc
+for_window [title = "MyDatabase.*"] move container to workspace KeePassXC
+bindsym $mod+Shift+y exec keepassxc
+bindsym $mod+y workspace KeepassXC
 
