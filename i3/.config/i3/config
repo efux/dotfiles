@@ -30,7 +30,7 @@ output DP-8 pos 0 0
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec konsole
+bindsym $mod+Return exec konsole --hide-tabbar --hide-menubar
 
 # other useful shortcuts
 bindsym $mod+p exec pavucontrol
