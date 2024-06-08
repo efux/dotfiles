@@ -1,0 +1,51 @@
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAQAAAAAAAAAAAAAAAPwCAAAAAvsAAAAiAFEAdQBpAGMAawBDAG8AbQBtAGEAbgBkAHMARABvAGMAawAAAAAA/////wAAAT8A////+wAAABwAUwBTAEgATQBhAG4AYQBnAGUAcgBEAG8AYwBrAAAAAAD/////AAAA7wD///8AAAO8AAAEVwAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAACAAAAFgBtAGEAaQBuAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAAAAAAAAAABwAcwBlAHMAcwBpAG8AbgBUAG8AbwBsAGIAYQByAQAAALz/////AAAAAAAAAAA=
+eDP-1 Window-Maximized 1920x1200 eDP-1=true
+
+[Desktop Entry]
+DefaultProfile=minimal.profile
+
+[General]
+ConfigVersion=1
+
+[MainWindow]
+1680x1050 screen: Window-Maximized=true
+1920x1200 screen: Height=1200
+1920x1200 screen: Width=1920
+1920x1200 screen: Window-Maximized=true
+2 screens: Height=1200
+2 screens: Width=1920
+2 screens: Window-Maximized=true
+3 screens: Height=1200
+3 screens: Width=1920
+3 screens: Window-Maximized=true
+3440x1440 screen: Window-Maximized=true
+DP-1 Window-Maximized 1680x1050 DP-1=true
+DP-7 DP-8 Window-Maximized 1920x1200 DP-7=true
+DP-7 DP-8 Window-Maximized 1920x1200 DP-8=true
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAQAAAAAAAAAAAAAAAPwCAAAAAvsAAAAiAFEAdQBpAGMAawBDAG8AbQBtAGEAbgBkAHMARABvAGMAawAAAAAA/////wAAAT8A////+wAAABwAUwBTAEgATQBhAG4AYQBnAGUAcgBEAG8AYwBrAAAAAAD/////AAAA7wD///8AAAd8AAAEfAAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAACAAAAFgBtAGEAaQBuAFQAbwBvAGwAQgBhAHIAAAAAAP////8AAAAAAAAAAAAAABwAcwBlAHMAcwBpAG8AbgBUAG8AbwBsAGIAYQByAAAAAAD/////AAAAAAAAAAA=
+ToolBarsMovable=Disabled
+eDP-1 DP-1 Window-Maximized 1680x1050 DP-1=true
+eDP-1 DP-1 Window-Maximized 1920x1200 eDP-1=true
+eDP-1 DP-10 DP-11 Window-Maximized 1920x1200 DP-11=true
+eDP-1 DP-5 Window-Maximized 1920x1200 eDP-1=true
+eDP-1 DP-5 Window-Maximized 3440x1440 DP-5=true
+eDP-1 DP-7 DP-8 Window-Maximized 1920x1200 DP-7=true
+eDP-1 DP-7 DP-8 Window-Maximized 1920x1200 DP-8=true
+eDP-1 DP-7 DP-8 Window-Maximized 1920x1200 eDP-1=true
+eDP-1 DP-8 DP-9 Window-Maximized 1920x1200 DP-8=true
+eDP-1 DP-8 DP-9 Window-Maximized 1920x1200 DP-9=true
+eDP-1 DP-8 DP-9 Window-Maximized 1920x1200 eDP-1=true
+eDP-1 DP-9 DP-10 Window-Maximized 1920x1200 DP-10=true
+eDP-1 DP-9 DP-10 Window-Maximized 1920x1200 DP-9=true
+eDP-1 DP-9 DP-10 Window-Maximized 1920x1200 eDP-1=true
+eDP-1 Height 1920x1200 eDP-1=1200
+eDP-1 Height 3840x2400 eDP-1=679
+eDP-1 Width 1920x1200 eDP-1=1920
+eDP-1 Width 3840x2400 eDP-1=1015
+eDP-1 Window-Maximized 1920x1200 eDP-1=true
+eDP-1 Window-Maximized 3840x2400 eDP-1=true
+
+[UiSettings]
+ColorScheme=
