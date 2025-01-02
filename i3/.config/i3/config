@@ -16,7 +16,7 @@ set $desktopmenu rofi -show drun
 include /etc/sway/config-vars.d/*
 
 # autostart
-output * bg /home/efux/Pictures/bg.jpg fill
+output * bg /home/efux/Pictures/caspar.jpg fill
 
 # monitor alignment (use swaymsg -t get_outputs to figure out the names)
 output eDP-1 pos 3840 0
@@ -142,7 +142,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+R restart
+bindsym $mod+Shift+R reload
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+E exit
 
