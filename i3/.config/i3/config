@@ -14,6 +14,7 @@ set $menu dmenu_path | rofi -show run | xargs swaymsg exec --
 set $desktopmenu rofi -show drun
 
 include /etc/sway/config-vars.d/*
+include /etc/sway/config.d/*
 
 # autostart
 output * bg /home/efux/Pictures/caspar.jpg fill
@@ -23,8 +24,12 @@ output eDP-1 pos 3840 0
 output DP-7 pos 1920 0
 output DP-8 pos 0 0
 
+# screen in Z-office
+output DP-6 mode 3840x2160@60Hz
+output DP-6 scale 1.2
+
 # font for window titles. ISO 10646 = Unicode
-# font pango:monospace 10
+font pango:monospace 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -34,7 +39,7 @@ bindsym $mod+Return exec konsole --hide-tabbar --hide-menubar
 
 # other useful shortcuts
 bindsym $mod+p exec pavucontrol
-bindsym $mod+i exec "firefox --private-window"
+bindsym $mod+i exec firefox --private-window
 bindsym $mod+Shift+i exec firefox
 bindsym $mod+t exec thunar
 bindsym $mod+x exec fuxconf
@@ -43,13 +48,13 @@ bindsym $mod+x exec fuxconf
 bindsym F7 exec playerctl previous
 bindsym F8 exec playerctl next
 bindsym F9 exec playerctl play-pause
-bindsym F10 exec amixer sset Master 3%-
-bindsym F11 exec amixer sset Master 3%+
+bindsym F10 exec pactl set-sink-volume 0 -1%
+bindsym F11 exec pactl set-sink-volume 0 +1%
 bindsym F12 exec amixer -q sset Master toggle 
 
 # Screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5%
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5%
+bindsym XF86MonBrightnessDown exec brightnessctl -d intel_backlight s 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight s 5%+
 
 # lock screen
 bindsym $mod+Shift+L exec swaylock -c 000000ff
