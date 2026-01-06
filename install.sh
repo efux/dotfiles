@@ -1,3 +1,3 @@
 #!/bin/bash
 
-stow i3 rofi mpv zsh vim konsole
+stow i3 rofi mpv zsh vim konsole nvim

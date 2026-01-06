@@ -17,7 +17,7 @@ include /etc/sway/config-vars.d/*
 include /etc/sway/config.d/*
 
 # autostart
-output * bg /home/efux/Pictures/caspar.jpg fill
+output * bg /home/efux/Pictures/caspar2.jpg fill
 
 # monitor alignment (use swaymsg -t get_outputs to figure out the names)
 output eDP-1 pos 3840 0
@@ -39,8 +39,8 @@ bindsym $mod+Return exec konsole --hide-tabbar --hide-menubar
 
 # other useful shortcuts
 bindsym $mod+p exec pavucontrol
-bindsym $mod+i exec firefox --private-window
-bindsym $mod+Shift+i exec firefox
+bindsym $mod+i exec librewolf --private-window
+bindsym $mod+Shift+i exec librewolf
 bindsym $mod+t exec thunar
 bindsym $mod+x exec fuxconf
 

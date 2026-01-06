@@ -9,6 +9,7 @@ ZSH_THEME="robbyrussell"
 
 # Aliases
 alias gc="git commit -a"
+alias vim="nvim"
 
 # Functions
 dev() { 
@@ -102,7 +103,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
