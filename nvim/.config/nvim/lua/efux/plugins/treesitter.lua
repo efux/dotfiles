@@ -24,7 +24,9 @@ return {
 
 					textobjects = {
 						enable = true
-					}
+					},
+
+					auto_install = true
 				}
 		end
 	}
