@@ -11,6 +11,8 @@ ZSH_THEME="robbyrussell"
 alias gc="git commit -a"
 alias vim="nvim"
 
+bindkey '^H' backward-kill-word
+
 # Functions
 dev() { 
 	if [[ -d ~/Documents/dev/$1 ]] then
