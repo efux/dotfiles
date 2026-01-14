@@ -135,6 +135,7 @@ bindsym $mod+0 workspace number 10
 
 # bindsym switch to available workspace on active screen
 bindsym $mod+period exec switch-to-new-workspace
+bindsym $mod+Shift+period exec move-window-to-new-workspace
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
