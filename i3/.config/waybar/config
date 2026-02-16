@@ -134,7 +134,7 @@
             "default": "🎜"
         },
         "escape": true,
-        "exec": "playerctl -a metadata --player=firefox --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F"
+        "exec": "playerctl -a metadata --player=firefox,chromium --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F"
     }
 }
 
