@@ -12,6 +12,7 @@
 				    selected-normal-foreground: #ffffff;
 
 }
+
 #window {
 	anchor: north;
 	location: north;
@@ -31,6 +32,7 @@
 			  text-color:       @prompt-foreground;
 	font:             @prompt-font;
 }
+
 #listview {
 	layout: horizontal;
 	lines: 100;
