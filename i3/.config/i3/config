@@ -19,15 +19,6 @@ include /etc/sway/config.d/*
 # autostart
 output * bg /home/efux/Pictures/caspar2.jpg fill
 
-# monitor alignment (use swaymsg -t get_outputs to figure out the names)
-output eDP-1 pos 3840 0
-output DP-7 pos 1920 0
-output DP-8 pos 0 0
-
-# screen in Z-office
-output DP-6 mode 3840x2160@60Hz
-output DP-6 scale 1.2
-
 # font for window titles. ISO 10646 = Unicode
 font pango:monospace 10
 
@@ -35,14 +26,14 @@ font pango:monospace 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec konsole --hide-tabbar --hide-menubar
+bindsym $mod+Return exec konsole --hide-tabbar --hide-menubar -e sh -c "command -v tmux >/dev/null 2>&1 && exec tmux || exec $SHELL"
 
 # other useful shortcuts
 bindsym $mod+p exec pavucontrol
 bindsym $mod+i exec librewolf --private-window
 bindsym $mod+Shift+i exec librewolf
 bindsym $mod+t exec thunar
-bindsym $mod+x exec fuxconf
+bindsym $mod+x exec fux-conf
 
 # The F7 - F12 key are remapped to suit the media keys (amixer needs alsa-mixer installed)
 bindsym F7 exec playerctl previous

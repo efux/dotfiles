@@ -1,0 +1,5 @@
+
+profile 20260506_0930 {
+    output "Samsung Display Corp. ATNA40HQ02-0 Unknown" mode 2880x1800@60 position 8880,440 scale 1.8
+    output "Philips Consumer Electronics Company PHL34E1C5600 UK02425018128" mode 3440x1440@59.973 position 5440,0
+}

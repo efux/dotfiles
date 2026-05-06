@@ -10,30 +10,46 @@ ZSH_THEME="robbyrussell"
 # Aliases
 alias gc="git commit -a"
 alias vim="nvim"
+alias nn='new-note'
 
 bindkey '^H' backward-kill-word
 
 # Functions
-dev() { 
-	if [[ -d ~/Documents/dev/$1 ]] then
-		cd ~/Documents/dev/$1; 
-	else
-		mkdir -p ~/Documents/dev/$1;
-		cd ~/Documents/dev/$1; 
-		git init
-		git remote add origin git@github.com:efux/$1.git
-		touch README.md
+dev() {
+  local base_dir="/home/efux/Documents/dev"
 
-		# Create content of the README.md file
-		echo $1 >> README.md
-		echo "===============" >> README.md
-		echo >> README.md
-		echo Goals of this project >> README.md
-		echo "---------------" >> README.md
-		echo >> README.md
+  if [[ $# -eq 0 ]]; then
+    cd "$base_dir" || return
+  elif [[ "$1" == "-s" ]]; then
+    local selected
+    selected=$(find "$base_dir" -mindepth 1 -maxdepth 1 -type d | sed "s|$base_dir/||" | fzf)
+    if [[ -n "$selected" ]]; then
+      cd "$base_dir/$selected" || return
+    fi
+  else
+    if [[ -d "$base_dir/$1" ]]; then
+      cd "$base_dir/$1" || return
+    else
+      echo "Directory not found: $1"
+      return 1
+    fi
+  fi
+}
 
-		vim + README.md
-	fi
+# Completion function
+_dev_completion() {
+  local base_dir="$HOME/Documents/dev"
+  local -a dirs
+
+  dirs=(${(f)"$(find "$base_dir" -mindepth 1 -maxdepth 1 -type d -exec basename {} \;)"})
+
+  _describe 'dev directories' dirs
+}
+
+n() {
+  local file
+  file=$(find ~/Documents/notes -type f | fzf) || return
+  nvim "$file"
 }
 
 mod() { 
@@ -129,3 +145,20 @@ export EDITOR='vim'
 
 # correction of the backspace problem in vim
 stty erase '^?'
+export PATH="$HOME/.local/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# lean-ctx shell hook — begin
+if [ -f "/home/efux/.config/lean-ctx/shell-hook.zsh" ]; then
+. "/home/efux/.config/lean-ctx/shell-hook.zsh"
+fi
+# lean-ctx shell hook — end
+
+# >>> lean-ctx agent aliases >>>
+alias claude='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" claude'
+alias codex='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" codex'
+alias gemini='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" gemini'
+# <<< lean-ctx agent aliases <<<
