@@ -1,5 +1,19 @@
+profile 20260506_1006 {
+    output eDP-1 mode 2880x1800@60 position 3440,1360 scale 1.8
+    output DP-1 mode 3440x1440@59.973 position 0,920
+}
 
-profile 20260506_0930 {
-    output "Samsung Display Corp. ATNA40HQ02-0 Unknown" mode 2880x1800@60 position 8880,440 scale 1.8
-    output "Philips Consumer Electronics Company PHL34E1C5600 UK02425018128" mode 3440x1440@59.973 position 5440,0
+profile 20260507_0829 {
+    output eDP-1 mode 2880x1800@60 position 0,0 scale 1.8
+}
+
+profile 20260507_0946 {
+    output eDP-1 mode 2880x1800@60 position 8480,1629 scale 1.8
+    output HDMI-A-1 mode 3440x1440@59.973 position 5040,1360
+}
+
+profile 20260508_1053 {
+    output eDP-1 mode 2880x1800@60 position 5280,300 scale 2
+    output DP-6 mode 1920x1200@59.95 position 1440,0
+    output DP-5 mode 1920x1200@59.95 position 3360,0
 }
