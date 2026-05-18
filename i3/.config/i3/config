@@ -52,6 +52,7 @@ bindsym $mod+Shift+L exec swaylock -c 000000ff
 
 # take a screenshot
 bindsym $mod+u exec XDG_SCREENSHOTS_DIR=/tmp grimshot copy area
+bindsym $mod+Shift+u exec XDG_SCREENSHOTS_DIR=/tmp grimshot save area - | swappy -f -
 
 # kill focused window
 # bindsym $mod+F4 kill
