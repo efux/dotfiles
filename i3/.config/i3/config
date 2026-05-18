@@ -26,7 +26,7 @@ font pango:monospace 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec konsole --hide-tabbar --hide-menubar -e sh -c "command -v tmux >/dev/null 2>&1 && exec tmux || exec $SHELL"
+bindsym $mod+Return exec konsole --hide-tabbar --hide-menubar
 
 # other useful shortcuts
 bindsym $mod+p exec pavucontrol
@@ -181,7 +181,7 @@ input * {
 }
 
 exec keepassxc
+for_window [app_id="^$"] floating enable
 for_window [title = "MyDatabase.*"] move container to workspace KeePassXC
 bindsym $mod+Shift+y exec keepassxc
 bindsym $mod+y workspace KeePassXC
-
