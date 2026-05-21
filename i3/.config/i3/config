@@ -82,8 +82,6 @@ bindsym $mod+Shift+K move up
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
-
-
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
@@ -186,3 +184,5 @@ for_window [app_id="^$"] floating enable
 for_window [title = "MyDatabase.*"] move container to workspace KeePassXC
 bindsym $mod+Shift+y exec keepassxc
 bindsym $mod+y workspace KeePassXC
+
+exec_always "pkill kanshi; kanshi"

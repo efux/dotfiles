@@ -17,3 +17,9 @@ profile 20260508_1053 {
     output DP-6 mode 1920x1200@59.95 position 1440,0
     output DP-5 mode 1920x1200@59.95 position 3360,0
 }
+
+profile 20260521_1240 {
+    output eDP-1 mode 2880x1800@60 position 3439,1126 scale 1.8
+    output DP-1 mode 2560x1440@59.951 position 5039,919
+    output DP-2 mode 2560x1440@59.951 position 7599,919
+}
