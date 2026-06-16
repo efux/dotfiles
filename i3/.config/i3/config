@@ -26,7 +26,7 @@ font pango:monospace 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec konsole --hide-tabbar --hide-menubar
+bindsym $mod+Return exec foot
 
 # other useful shortcuts
 bindsym $mod+p exec pavucontrol
@@ -36,9 +36,9 @@ bindsym $mod+t exec thunar
 bindsym $mod+x exec fux-conf
 
 # The F7 - F12 key are remapped to suit the media keys (amixer needs alsa-mixer installed)
-bindsym F7 exec playerctl previous
-bindsym F8 exec playerctl next
-bindsym F9 exec playerctl play-pause
+bindsym F7 exec playerctl --player=chromium previous
+bindsym F8 exec playerctl --player=chromium next
+bindsym F9 exec playerctl --player=chromium play-pause
 bindsym F10 exec pactl set-sink-volume 0 -1%
 bindsym F11 exec pactl set-sink-volume 0 +1%
 bindsym F12 exec amixer -q sset Master toggle 
