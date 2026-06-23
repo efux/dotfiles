@@ -4,7 +4,8 @@ source ~/.config/zsh/prompt.zsh
 source ~/.config/zsh/aliases.zsh
 source ~/.config/zsh/functions.zsh
 source ~/.config/zsh/keybindings.zsh
-source ~/.config/zsh/nvm.zsh
+# source ~/.config/zsh/nvm.zsh
+source ~/.config/zsh/fnm.zsh
 
 # lean-ctx shell hook — begin
 if [ -f "/home/efux/.lean-ctx/shell-hook.zsh" ]; then
@@ -14,6 +15,7 @@ fi
 
 # >>> lean-ctx agent aliases >>>
 alias claude='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" claude'
+alias codebuddy='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" codebuddy'
 alias codex='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" codex'
 alias gemini='LEAN_CTX_AGENT=1 BASH_ENV="$HOME/.bashenv" gemini'
 # <<< lean-ctx agent aliases <<<
