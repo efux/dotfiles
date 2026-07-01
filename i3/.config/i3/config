@@ -179,6 +179,10 @@ input * {
 	xkb_variant "de"
 }
 
+input "1386:21493:Wacom_quicki2c-hid_056A:53F5_Finger" {
+	map_to_output eDP-1
+}
+
 exec keepassxc
 for_window [app_id="^$"] floating enable
 for_window [title = "MyDatabase.*"] move container to workspace KeePassXC
