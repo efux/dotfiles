@@ -135,7 +135,8 @@
             "default": "🎜"
         },
         "escape": true,
-        "exec": "playerctl -a metadata --player=firefox,chromium --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F"
+        "hide-empty-text": true,
+        "exec": "playerctl -a metadata --player=firefox,chromium --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F | jq --unbuffered -c 'if .alt==\"Playing\" then . else {text:\"\",tooltip:\"\",alt:.alt,class:.alt} end'"
     }
 }
 
