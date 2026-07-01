@@ -33,3 +33,7 @@ n() {
   file=$(find ~/Documents/notes -type f | fzf) || return
   nvim "$file"
 }
+
+precmd() {
+	print -Pn "\e]0;%n@%m: %~\a"
+}
