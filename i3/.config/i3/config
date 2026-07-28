@@ -58,6 +58,7 @@ bindsym $mod+Shift+L exec ~/.config/i3/scripts/lock.sh
 # take a screenshot
 bindsym $mod+u exec XDG_SCREENSHOTS_DIR=/tmp grimshot copy area
 bindsym $mod+Shift+u exec XDG_SCREENSHOTS_DIR=/tmp grimshot save area - | swappy -f -
+bindsym $mod+Print exec ~/.local/bin/record-region
 
 # kill focused window
 # bindsym $mod+F4 kill
