@@ -16,6 +16,11 @@ set $desktopmenu rofi -show drun
 include /etc/sway/config-vars.d/*
 include /etc/sway/config.d/*
 
+# systemd session tracking — required for sway-session.target (and units bound to it,
+# e.g. kanshi.service, sway-session-log.service) to actually activate
+exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP DISPLAY SWAYSOCK
+exec systemctl --user start sway-session.target
+
 # autostart
 output * bg /home/efux/Pictures/caspar2.jpg fill
 
@@ -48,7 +53,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl -d intel_backlight s 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight s 5%+
 
 # lock screen
-bindsym $mod+Shift+L exec swaylock -c 000000ff
+bindsym $mod+Shift+L exec ~/.config/i3/scripts/lock.sh
 
 # take a screenshot
 bindsym $mod+u exec XDG_SCREENSHOTS_DIR=/tmp grimshot copy area

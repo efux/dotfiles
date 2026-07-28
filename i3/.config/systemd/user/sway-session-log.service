@@ -1,0 +1,12 @@
+[Unit]
+Description=Log sway session start/stop
+BindsTo=sway-session.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/logger -t sway-lifecycle "sway session started"
+ExecStop=/usr/bin/logger -t sway-lifecycle "sway session stopped (shutdown)"
+
+[Install]
+WantedBy=sway-session.target
