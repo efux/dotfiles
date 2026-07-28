@@ -1,34 +1,30 @@
 return {
-
 	{
 		"nvim-treesitter/nvim-treesitter",
-			lazy = false,
-			build = ":TSUpdate",
-			config = function()
-				require("nvim-treesitter.configs").setup {
-					ensure_installed = { 
-						"lua",
-						"gitignore",
-						"python",
-						"javascript",
-						"typescript",
-						"bash",
-						"java",
-						"css",
-						"html",
-					},
+		branch = "main",
+		lazy = false,
+		build = ":TSUpdate",
+		config = function()
+			require("nvim-treesitter").install({
+					"lua",
+					"gitignore",
+					"python",
+					"javascript",
+					"typescript",
+					"bash",
+					"java",
+					"css",
+					"html",
+					"markdown",
+					"markdown_inline",
+					"gitcommit"
+					})
 
-					highlight = {
-						enable = true
-					},
-
-					textobjects = {
-						enable = true
-					},
-
-					auto_install = true
-				}
+		vim.api.nvim_create_autocmd("FileType", {
+				callback = function()
+				pcall(vim.treesitter.start)
+				end,
+				})
 		end
 	}
-
 }
