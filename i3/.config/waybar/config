@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
     "modules-center": ["sway/window"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "keyboard-state", "sway/language", "battery", "battery#bat2", "clock", "tray"],
+    "modules-right": ["custom/recording-status", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "keyboard-state", "sway/language", "battery", "battery#bat2", "clock", "tray"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -138,6 +138,15 @@
         "hide-empty-text": true,
         "interval": 1,
         "exec": "playerctl -a metadata --player=firefox,chromium --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' 2>/dev/null | jq -s -c 'map(select(.alt==\"Playing\")) | if length>0 then .[0] else {text:\"\",tooltip:\"\",alt:\"Stopped\",class:\"Stopped\"} end'"
+    },
+    "custom/recording-status": {
+        "exec": "~/.config/waybar/scripts/waybar-recording-status.sh",
+        "return-type": "json",
+        "interval": 1,
+        "format": "{}",
+        "tooltip": true,
+        "hide-empty-text": true,
+        "on-click": "pkill --signal INT -x wf-recorder"
     }
 }
 
