@@ -127,7 +127,7 @@
         "on-click": "fux-bluetooth"
     },
     "custom/media": {
-        "format": "{icon} {}",
+        "format": "{icon} {text}",
 	"return-type": "json",
         "max-length": 40,
         "format-icons": {
@@ -137,7 +137,7 @@
         "escape": true,
         "hide-empty-text": true,
         "interval": 1,
-        "exec": "playerctl -a metadata --player=firefox,chromium --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' 2>/dev/null | jq -s -c 'map(select(.alt==\"Playing\")) | if length>0 then .[0] else {text:\"\",tooltip:\"\",alt:\"Stopped\",class:\"Stopped\"} end'"
+        "exec": "playerctl -a metadata --player=firefox,chromium --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' 2>/dev/null | jq -s -c 'map(select(.alt==\"Playing\")) | if length>0 then .[0] else {text:\"\"} end'"
     },
     "custom/recording-status": {
         "exec": "~/.config/waybar/scripts/waybar-recording-status.sh",
